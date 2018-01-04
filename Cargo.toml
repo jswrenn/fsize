@@ -1,0 +1,8 @@
+[package]
+name = "fsize"
+version = "0.1.0"
+authors = ["Jack Wrenn <me@jswrenn.com>"]
+build = "build.rs"
+
+[build-dependencies]
+build-helper = "0.1.1"
