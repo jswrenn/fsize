@@ -2,6 +2,9 @@
 name = "fsize"
 version = "0.1.0"
 authors = ["Jack Wrenn <me@jswrenn.com>"]
+license = "CC0-1.0"
+description = "`fsize` is aliased to the floating-point type of pointer size"
+repository = "https://github.com/jswrenn/fsize"
 build = "build.rs"
 
 [build-dependencies]
