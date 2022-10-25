@@ -1,4 +1,5 @@
 #![no_std]
+#![allow(non_camel_case_types)]
 
 //! The pointer-sized floating-point type.
 //! 
@@ -6,4 +7,11 @@
 //!
 //! As Rust only supports [`f32`](https://doc.rust-lang.org/std/primitive.f32.html) and  [`f64`](https://doc.rust-lang.org/std/primitive.f64.html), `fsize` is only provided for 32 and 64 bit targets.
 
-include!(concat!(env!("OUT_DIR"), "/fsize.rs"));
+#[cfg(target_pointer_width = "32")]
+pub type fsize = f32;
+
+#[cfg(target_pointer_width = "64")]
+pub type fsize = f64;
+
+#[cfg(not(any(target_pointer_width = "32", target_pointer_width = "64")))]
+compile_error!("Unsupported target pointer width");
